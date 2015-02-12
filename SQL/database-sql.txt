@@ -1,0 +1,70 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.9
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost:8889
+-- Tiempo de generación: 03-12-2014 a las 04:46:48
+-- Versión del servidor: 5.5.34
+-- Versión de PHP: 5.5.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `albums`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `albums`
+--
+
+CREATE TABLE `albums` (
+  `id_album` int(11) NOT NULL AUTO_INCREMENT,
+  `album_name` varchar(200) NOT NULL,
+  `album_description` varchar(200) NOT NULL,
+  `album_order` int(11) NOT NULL,
+  `album_number_sheets` int(11) NOT NULL,
+  `album_year` varchar(200) NOT NULL,
+  `album_date` datetime NOT NULL,
+  `album_modification_date` datetime NOT NULL,
+  PRIMARY KEY (`id_album`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `confrontation`
+--
+
+CREATE TABLE `confrontation` (
+  `id_confrontation` int(11) NOT NULL AUTO_INCREMENT,
+  `id_album` int(11) NOT NULL,
+  `id_section` int(11) NOT NULL,
+  `confrontation_date` datetime NOT NULL,
+  PRIMARY KEY (`id_confrontation`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sections`
+--
+
+CREATE TABLE `sections` (
+  `id_section` int(11) NOT NULL AUTO_INCREMENT,
+  `section_name` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_section`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `sections`
+--
+
+INSERT INTO `sections` (`id_section`, `section_name`) VALUES
+(1, 'Stadiums'),
+(2, 'Teams'),
+(3, 'Playes'),
+(4, 'Positions'),
+(5, 'Champions league');
